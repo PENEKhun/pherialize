@@ -21,66 +21,70 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize.test;
+package io.github.penekhun.pherialize.exceptions;
 
-import java.io.Serializable;
 
 
 /**
- * CustomClass
+ * Exception thrown when someting goes wrong while unserializing.
  * 
  * @author Klaus Reimer (k@ailis.de)
  * @version $Revision$
  */
 
-public class CustomClass implements Serializable
+public class UnserializeException extends PherializeException
 {
     /** Serial version UID */
-    private static final long serialVersionUID = -7396948063312053556L;
+    private static final long serialVersionUID = -7127648595193318947L;
 
-    /** A test value */
-    private final String value;
 
-    /** Test values */
-    private final String[] strings;
+    /**
+     * Constructor
+     */
+
+    public UnserializeException()
+    {
+        super();
+    }
 
 
     /**
      * Constructor
      * 
-     * @param value
-     *            A test value
-     * @param strings
-     *            Test values
+     * @param message
+     *            The exception message
      */
 
-    public CustomClass(final String value, final String[] strings)
+    public UnserializeException(final String message)
     {
-        this.value = value;
-        this.strings = strings;
+        super(message);
     }
 
 
     /**
-     * Returns the test value
+     * Constructor
      * 
-     * @return The test value
+     * @param message
+     *            The exception message
+     * @param cause
+     *            The root cause
      */
 
-    public String getValue()
+    public UnserializeException(final String message, final Throwable cause)
     {
-        return this.value;
+        super(message, cause);
     }
 
 
     /**
-     * Returns the test values
+     * Constructor
      * 
-     * @return The test values
+     * @param cause
+     *            The root cause
      */
 
-    public String[] getStrings()
+    public UnserializeException(final Throwable cause)
     {
-        return this.strings;
+        super(cause);
     }
 }

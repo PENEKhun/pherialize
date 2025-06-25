@@ -21,7 +21,7 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
+package io.github.penekhun.pherialize;
 
 import java.nio.charset.Charset;
 

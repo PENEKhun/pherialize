@@ -21,38 +21,24 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
-
+package io.github.penekhun.pherialize.test;
 
 
 /**
- * A test class representing a person
- * 
+ * A test enum
+ *
  * @author Klaus Reimer (k@ailis.de)
  * @version $Revision$
  */
 
-public class InheritedPerson extends Person
+public enum EnumClass
 {
-    /** Serial version UID */
-    private static final long serialVersionUID = -3282108166577595725L;
-
+    /** Red color */
+    RED,
     
-    /**
-     * Constructor
-     * 
-     * @param name
-     *            The name
-     * @param age
-     *            The age
-     * @param earthling
-     *            If person is an earthling
-     * @param special
-     *            Special stuff
-     */
-
-    public InheritedPerson(final String name, final int age, final boolean earthling, final Object special)
-    {
-        super(name, age, earthling, special);
-    }
+    /** Green color */
+    GREEN,
+    
+    /** Blue color */
+    BLUE
 }

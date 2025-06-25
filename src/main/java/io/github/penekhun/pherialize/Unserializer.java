@@ -21,14 +21,14 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
+package io.github.penekhun.pherialize;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.ailis.pherialize.exceptions.UnserializeException;
+import io.github.penekhun.pherialize.exceptions.UnserializeException;
 
 
 /**

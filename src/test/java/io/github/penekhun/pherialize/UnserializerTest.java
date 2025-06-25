@@ -21,7 +21,7 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
+package io.github.penekhun.pherialize;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

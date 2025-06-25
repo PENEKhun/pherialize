@@ -21,7 +21,7 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
+package io.github.penekhun.pherialize;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -31,7 +31,7 @@ import java.util.Map;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import de.ailis.pherialize.test.CustomClass;
+import io.github.penekhun.pherialize.test.CustomClass;
 
 
 /**
@@ -163,8 +163,8 @@ public class SerializerTest extends TestCase
 
     public void testSerializeDouble()
     {
-        assertEquals("d:0.0;", Pherialize.serialize(Double.valueOf(0)));
-        assertEquals("d:-1.0;", Pherialize.serialize(Double.valueOf(-1)));
+        assertEquals("d:0;", Pherialize.serialize(Double.valueOf(0)));
+        assertEquals("d:-1;", Pherialize.serialize(Double.valueOf(-1)));
         assertEquals("d:-10.1;", Pherialize.serialize(Double.valueOf(-10.1)));
         assertEquals("d:545.159122;", Pherialize.serialize(Double
             .valueOf(545.159122)));
@@ -177,8 +177,8 @@ public class SerializerTest extends TestCase
 
     public void testSerializeFloat()
     {
-        assertEquals("d:0.0;", Pherialize.serialize(Float.valueOf(0)));
-        assertEquals("d:-1.0;", Pherialize.serialize(Float.valueOf(-1)));
+        assertEquals("d:0;", Pherialize.serialize(Float.valueOf(0)));
+        assertEquals("d:-1;", Pherialize.serialize(Float.valueOf(-1)));
         assertEquals("d:-10.100000381469727;", Pherialize.serialize(Float
             .valueOf((float) -10.100000381469727)));
         assertEquals("d:545.1591186523438;", Pherialize.serialize(Float

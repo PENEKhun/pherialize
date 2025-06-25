@@ -21,7 +21,7 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
+package io.github.penekhun.pherialize;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -133,7 +133,6 @@ public class MixedArray extends LinkedHashMap<Object, Object>
             return super.get(new Mixed(key));
         }
     }
-
 
     /**
      * Returns value for specified key as mixed value.

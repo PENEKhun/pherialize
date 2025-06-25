@@ -1,0 +1,85 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'io.github.penekhun'
+version = '1.2.5'
+description = '''Library for serializing Java objects into the
+PHP serializing format and unserializing data from
+this format back into Java objects.'''
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:3.8.1'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            pom {
+                name = 'Pherialize'
+                url = 'http://github.com/PENEKhun/pherialize'
+                inceptionYear = '2006'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'LICENSE.txt'
+                        distribution = 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'penekhun'
+                        name = 'PENEKhun'
+                        email = 'penekhun@gmail.com'
+                        url = 'http://www.huni.kr'
+                        timezone = '+9'
+                    }
+                }
+
+                scm {
+                    connection = 'scm:git:git://github.com/PENEKhun/pherialize.git'
+                    developerConnection = 'scm:git:ssh://git@github.com/PENEKhun/pherialize.git'
+                    url = 'http://github.com/PENEKhun/pherialize'
+                }
+
+                issueManagement {
+                    system = 'GitHub'
+                    url = 'https://github.com/PENEKhun/pherialize/issues'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'ailis-releases'
+            url = uri('http://nexus.ailis.de/content/repositories/releases')
+            credentials {
+                username = project.findProperty("mavenUser") ?: ""
+                password = project.findProperty("mavenPassword") ?: ""
+            }
+        }
+        maven {
+            name = 'ailis-snapshots'
+            url = uri('http://nexus.ailis.de/content/repositories/snapshots')
+            credentials {
+                username = project.findProperty("mavenUser") ?: ""
+                password = project.findProperty("mavenPassword") ?: ""
+            }
+        }
+    }
+}

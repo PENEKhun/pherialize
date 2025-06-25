@@ -21,24 +21,70 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize.test;
+package io.github.penekhun.pherialize.exceptions;
+
 
 
 /**
- * A test enum
- *
+ * Exception thrown when someting goes wrong while serializing.
+ * 
  * @author Klaus Reimer (k@ailis.de)
  * @version $Revision$
  */
 
-public enum EnumClass
+public class SerializeException extends PherializeException
 {
-    /** Red color */
-    RED,
-    
-    /** Green color */
-    GREEN,
-    
-    /** Blue color */
-    BLUE
+    /** Serial version UID */
+    private static final long serialVersionUID = 5304443329670892370L;
+
+
+    /**
+     * Constructor
+     */
+
+    public SerializeException()
+    {
+        super();
+    }
+
+
+    /**
+     * Constructor
+     * 
+     * @param message
+     *            The exception message
+     */
+
+    public SerializeException(final String message)
+    {
+        super(message);
+    }
+
+
+    /**
+     * Constructor
+     * 
+     * @param message
+     *            The exception message
+     * @param cause
+     *            The root cause
+     */
+
+    public SerializeException(final String message, final Throwable cause)
+    {
+        super(message, cause);
+    }
+
+
+    /**
+     * Constructor
+     * 
+     * @param cause
+     *            The root cause
+     */
+
+    public SerializeException(final Throwable cause)
+    {
+        super(cause);
+    }
 }

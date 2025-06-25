@@ -21,7 +21,7 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize;
+package io.github.penekhun.pherialize;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
@@ -33,7 +33,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import de.ailis.pherialize.exceptions.SerializeException;
+import io.github.penekhun.pherialize.exceptions.SerializeException;
 
 
 /**
@@ -376,7 +376,17 @@ public class Serializer
     private void serializeDouble(final double number, final StringBuffer buffer)
     {
         buffer.append("d:");
-        buffer.append(number);
+        if (number % 1 == 0)
+        {
+            // If the number is an integer, we serialize it as an integer
+            // to be compatible with PHP
+            buffer.append((int) number);
+        }
+        else
+        {
+            // Otherwise we serialize it as a double
+            buffer.append(number);
+        }
         buffer.append(';');
     }
 

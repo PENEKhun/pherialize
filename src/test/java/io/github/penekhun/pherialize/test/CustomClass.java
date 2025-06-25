@@ -21,70 +21,66 @@
  * IN THE SOFTWARE.
  */
 
-package de.ailis.pherialize.exceptions;
+package io.github.penekhun.pherialize.test;
 
+import java.io.Serializable;
 
 
 /**
- * Exception thrown when someting goes wrong while unserializing.
+ * CustomClass
  * 
  * @author Klaus Reimer (k@ailis.de)
  * @version $Revision$
  */
 
-public class UnserializeException extends PherializeException
+public class CustomClass implements Serializable
 {
     /** Serial version UID */
-    private static final long serialVersionUID = -7127648595193318947L;
+    private static final long serialVersionUID = -7396948063312053556L;
 
+    /** A test value */
+    private final String value;
 
-    /**
-     * Constructor
-     */
-
-    public UnserializeException()
-    {
-        super();
-    }
-
-
-    /**
-     * Constructor
-     * 
-     * @param message
-     *            The exception message
-     */
-
-    public UnserializeException(final String message)
-    {
-        super(message);
-    }
+    /** Test values */
+    private final String[] strings;
 
 
     /**
      * Constructor
      * 
-     * @param message
-     *            The exception message
-     * @param cause
-     *            The root cause
+     * @param value
+     *            A test value
+     * @param strings
+     *            Test values
      */
 
-    public UnserializeException(final String message, final Throwable cause)
+    public CustomClass(final String value, final String[] strings)
     {
-        super(message, cause);
+        this.value = value;
+        this.strings = strings;
     }
 
 
     /**
-     * Constructor
+     * Returns the test value
      * 
-     * @param cause
-     *            The root cause
+     * @return The test value
      */
 
-    public UnserializeException(final Throwable cause)
+    public String getValue()
     {
-        super(cause);
+        return this.value;
+    }
+
+
+    /**
+     * Returns the test values
+     * 
+     * @return The test values
+     */
+
+    public String[] getStrings()
+    {
+        return this.strings;
     }
 }
